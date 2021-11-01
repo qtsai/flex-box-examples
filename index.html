@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlexBox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flexd-row {
+            /* defaults to row /*
+            /*flex-direction: row; */
+        }
+
+        .flexd-row-rev {
+            flex-direction: row-reverse;
+        }
+
+        .flexd-col {
+            flex-direction: column;
+        }
+
+        .flexd-col-rev {
+            flex-direction: column-reverse;
+        }
+
+        .jc-start {
+            justify-content: start;
+        }
+
+        .jc-end {
+            justify-content: end;
+        }
+
+        .jc-center {
+            justify-content: center;
+        }
+
+        .jc-space-around {
+            justify-content: space-around;
+        }
+
+        .jc-space-between {
+            justify-content: space-between;
+        }
+
+        .jc-space-evenly {
+            justify-content: space-evenly;
+        }
+
+        .flexw-no {
+            /*defaults to no wrap */
+            /*flex-wrap: nowrap;*/
+        }
+
+        .flexw {
+            flex-wrap: wrap;
+        }
+
+        .flexw-rev {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ai-start {
+            align-items: start;
+        }
+
+        .ai-end {
+            align-items: end;
+        }
+
+        .ai-center {
+            align-items: center;
+        }
+
+        .ai-stretch {
+            align-items: stretch;
+        }
+
+        .ai-baseline {
+            align-items: baseline;
+        }
+
+        .bg-red {
+            background-color: rgba(180, 89, 89, 0.83);
+        }
+
+        .bg-green {
+            background-color: #7ec77e;
+        }
+
+        .bg-blue {
+            background-color: #7373cc;
+        }
+
+        .box {
+            border: solid 1em black;
+            margin: 1em;
+            min-width: 10em;
+            min-height: 10em;
+            font-weight: bold;
+            text-align: center;
+            /*line-height: 10em;*/
+        }
+        .box-h1 {
+            min-height: 4em;
+        }
+        .box-h2 {
+            min-height: 12em;
+        }
+        .box-h3 {
+            min-height: 20em;
+        }
+    </style>
+    <script>
+
+    </script>
+    <!-- https://css-tricks.com/snippets/css/a-guide-to-flexbox/ -->
+</head>
+<body>
+<main>
+    <h1>flex row</h1>
+    <h1>justify content</h1>
+    <h3>1 start - align boxes at line start</h3>
+    <div class="flex flexd-row jc-start bg-red">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <h3>2 end - align boxes at line end</h3>
+    <div class="flex flexd-row jc-end bg-blue">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <h3>3 center - align boxes in the center</h3>
+    <div class="flex flexd-row jc-center bg-green">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <h3>4 space evenly - even space before, between and after boxes</h3>
+    <div class="flex flexd-row jc-space-evenly bg-red">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <h3>5 space around - even space around each box individually (similar to 'margin')</h3>
+    <div class="flex flexd-row jc-space-around bg-blue">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <h3>6 space between - even space between the boxes</h3>
+    <div class="flex flexd-row jc-space-between bg-green">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <h1>flex row reverse</h1>
+    <h3>boxes are aligned from right to left</h3>
+    <div class="flex flexd-row-rev jc-space-between bg-red">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <h1>flex col</h1>
+    <div class="flex jc-space-between">
+        <h3>col - aligned from top to bottom</h3>
+        <h3>col-rev - aligned from bottom to top</h3>
+    </div>
+    <div class="flex flexd-row jc-space-between">
+        <div class="flex flexd-col bg-blue">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+        <div class="flex flexd-col-rev s bg-green">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </div>
+    <h1>flex wrap</h1>
+    <h3>no wrap (default) - fits into single line</h3>
+    <div class="flex flexd-row jc-space-evenly flexw-no bg-red">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <h3>wrap - wraps to line below</h3>
+    <div class="flex flexd-row jc-space-evenly flexw bg-blue">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <h3>wrap rev - wraps to line above</h3>
+    <div class="flex flexd-row jc-space-evenly flexw-rev bg-green">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <h1>align items</h1>
+    <h3>start - aligned start of cross axis</h3>
+    <div class="flex flexd-row jc-space-evenly ai-start bg-red">
+        <div class="box box-h2">1</div>
+        <div class="box box-h1">2</div>
+        <div class="box box-h3">3</div>
+        <div class="box">4</div>
+    </div>
+    <h3>end - aligned at end of cross axis</h3>
+    <div class="flex flexd-row jc-space-evenly ai-end bg-blue">
+        <div class="box box-h2">1</div>
+        <div class="box box-h1">2</div>
+        <div class="box box-h3">3</div>
+        <div class="box">4</div>
+    </div>
+    <h3>center - aligned middle of cross axis</h3>
+    <div class="flex flexd-row jc-space-evenly ai-center bg-green">
+        <div class="box box-h2">1</div>
+        <div class="box box-h1">2</div>
+        <div class="box box-h3">3</div>
+        <div class="box">4</div>
+    </div>
+    <h3>stretch - box stretched to fill along cross axis</h3>
+    <div class="flex flexd-row jc-space-evenly ai-stretch bg-red">
+        <div class="box box-h2">1</div>
+        <div class="box box-h1">2</div>
+        <div class="box box-h3">3</div>
+        <div class="box">4</div>
+    </div>
+    <h3>baseline - text base is aligned</h3>
+    <div class="flex flexd-row jc-space-evenly ai-baseline bg-blue">
+        <div class="box box-h2" style="line-height: 100px">1</div>
+        <div class="box box-h1" style="line-height: 30px">2</div>
+        <div class="box box-h3" style="line-height: 76px">3</div>
+        <div class="box" style="line-height: 10px">4</div>
+    </div>
+    <h1>align content</h1>
+    <div class="flex jc-space-evenly flexw bg-green">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box">12</div>
+        <div class="box">13</div>
+    </div>
+
+
+</main>
+
+</body>
+
+</html>
